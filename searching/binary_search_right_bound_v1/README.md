@@ -1,4 +1,4 @@
-# 二分法查找并插入
+# 二分法查找右边界_v1
   
 执行示例：  
 $ python binary_search_right_bound_v1.py  

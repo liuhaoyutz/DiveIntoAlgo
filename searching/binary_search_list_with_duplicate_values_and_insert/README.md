@@ -1,4 +1,4 @@
-# 二分法查找并插入
+# 二分法查找并插入_有重复元素
   
 执行示例：  
 $ python binary_search_list_with_duplicate_values_and_insert.py  
