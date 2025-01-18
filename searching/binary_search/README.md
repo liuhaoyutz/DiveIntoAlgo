@@ -19,9 +19,9 @@ Not found the target value in the list
 要在给定的有序列表list中查找target，  
 1、取得“区间”第一个元素的索引值low和最后一个元素的索引值high。  
 2、计算“区间”中间那个元素的索引值mid，比较中间那个元素的值list[mid]和target：   
-&emsp如果list[mid]等于target，说明找到了target，返回其索引；  
-&emsp如果list[mid]大于target，说明target在上半区。low不变，high更新为mid-1，将“区间”更新为上半区；  
-&emsp如果list[mid]小于target，说明target在下半区；low更新为mid+1，high不变，将“区间”更新为下半区。  
+&emsp;如果list[mid]等于target，说明找到了target，返回其索引；  
+&emsp;如果list[mid]大于target，说明target在上半区。low不变，high更新为mid-1，将“区间”更新为上半区；  
+&emsp;如果list[mid]小于target，说明target在下半区；low更新为mid+1，high不变，将“区间”更新为下半区。  
 3、重复步骤1和2，直到找到target。如果low > high，说明已经遍历了整个列表，没有找到target，此时返回-1。  
   
 ```python
