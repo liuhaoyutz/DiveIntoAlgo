@@ -16,12 +16,7 @@ def binary_search_and_insert(list, target):
         mid = (low + high) // 2
         guess = list[mid]
         
-        if guess == target:
-            # If an equal element is found,
-            # insert the new element to its left.
-            list.insert(mid, target)
-            return mid
-        elif guess < target:
+        if guess < target:
             low = mid + 1
         else:
             high = mid - 1
@@ -31,21 +26,17 @@ def binary_search_and_insert(list, target):
     return low
 
 # examples：
-list = [1, 3, 5, 6]
+list = [1, 3, 3, 3, 5, 5, 5, 5, 6]
 print("The original list is:", list)
 
 target = 5
 index = binary_search_and_insert(list, target)
 print(f"After insert {target}, the new list is: {list}, index: {index}")
 
+target = 3
+index = binary_search_and_insert(list, target)
+print(f"After insert {target}, the new list is: {list}, index: {index}")
+
 target = 2
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
-
-target = 7
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
-
-target = 0
 index = binary_search_and_insert(list, target)
 print(f"After insert {target}, the new list is: {list}, index: {index}")
