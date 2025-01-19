@@ -52,17 +52,17 @@ def binary_search_right_bound(list, target):
         return -1
 
 # examples：
-list = [1, 3, 3, 3, 5, 5, 5, 5, 6]
-print("The original list is:", list)
+sorted_list = [1, 3, 3, 3, 5, 5, 5, 5, 6]
+print("The original list is:", sorted_list)
 
 target = 5
-index = binary_search_right_bound(list, target)
-print(f"The index of the leftmost {target} is {index}")
+index = binary_search_right_bound(sorted_list, target)
+print(f"The index of the rightmost {target} is {index}")
 
 target = 3
-index = binary_search_right_bound(list, target)
-print(f"The index of the leftmost {target} is {index}")
+index = binary_search_right_bound(sorted_list, target)
+print(f"The index of the rightmost {target} is {index}")
 
 target = 2
-index = binary_search_right_bound(list, target)
-print(f"The index of the leftmost {target} is {index}")
+index = binary_search_right_bound(sorted_list, target)
+print(f"The index of the rightmost {target} is {index}")

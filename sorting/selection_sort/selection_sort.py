@@ -13,7 +13,7 @@ def selection_sort(list):
         # After each pass, the portion list[0:i+1] is sorted
 
 # Example usage:
-list = [64, 25, 12, 22, 11, 3, 32, 51, 42]
-print("Unsorted list:", list)
-selection_sort(list)
-print("Sorted list:", list)
+example_list = [64, 25, 12, 22, 11, 3, 32, 51, 42]
+print("Unsorted list:", example_list)
+selection_sort(example_list)
+print("Sorted list:", example_list)

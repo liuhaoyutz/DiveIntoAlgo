@@ -15,7 +15,7 @@ def bubble_sort(list):
             break
 
 # Example usage:
-list = [64, 25, 12, 22, 11, 3, 32, 51, 42]
-print("Unsorted list:", list)
-bubble_sort(list)
-print("Sorted list:", list)
+example_list = [64, 25, 12, 22, 11, 3, 32, 51, 42]
+print("Unsorted list:", example_list)
+bubble_sort(example_list)
+print("Sorted list:", example_list)

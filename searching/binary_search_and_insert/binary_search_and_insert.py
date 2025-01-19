@@ -31,21 +31,21 @@ def binary_search_and_insert(list, target):
     return low
 
 # examples：
-list = [1, 3, 5, 6]
-print("The original list is:", list)
+sorted_list = [1, 3, 5, 6]
+print("The original list is:", sorted_list)
 
 target = 5
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
+index = binary_search_and_insert(sorted_list, target)
+print(f"After insert {target}, the new list is: {sorted_list}, index: {index}")
 
 target = 2
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
+index = binary_search_and_insert(sorted_list, target)
+print(f"After insert {target}, the new list is: {sorted_list}, index: {index}")
 
 target = 7
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
+index = binary_search_and_insert(sorted_list, target)
+print(f"After insert {target}, the new list is: {sorted_list}, index: {index}")
 
 target = 0
-index = binary_search_and_insert(list, target)
-print(f"After insert {target}, the new list is: {list}, index: {index}")
+index = binary_search_and_insert(sorted_list, target)
+print(f"After insert {target}, the new list is: {sorted_list}, index: {index}")

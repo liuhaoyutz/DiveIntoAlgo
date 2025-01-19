@@ -3,9 +3,9 @@
 执行示例：  
 $ python binary_search_right_bound_v1.py  
 The original list is: [1, 3, 3, 3, 5, 5, 5, 5, 6]  
-The index of the leftmost 5 is 7  
-The index of the leftmost 3 is 3  
-The index of the leftmost 2 is -1    
+The index of the rightmost 5 is 7  
+The index of the rightmost 3 is 3  
+The index of the rightmost 2 is -1    
   
 目标：  
 给定一个有序列表list和一个元素target，列表可能存在重复元素。  
