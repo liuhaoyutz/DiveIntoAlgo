@@ -13,6 +13,83 @@
   
 在Python中，字典（dict）就是一种哈希表的实现。  
   
+代码分析：  
+custom_hash.py文件实现了自定义哈希表。  
+```python
+class HashTable:
+    def __init__(self, size=10):
+        # Initialize the hash table with empty bucket list entries.
+        self.size = size
+        self.table = [[] for _ in range(self.size)]
+```
+类HashTable代表一个哈希表。size是哈希表的大小。table是一个bucket的列表。bucket也是一个列表，其每个成员将是(key, value)元组。  
+```python
+    def _hash(self, key):
+        # A simple hash function that uses Python's built-in hash() function
+        return hash(key) % self.size
+```
+_hash函数用于生成哈希值。调用了Python内置的hash()函数。  
+```python
+    def put(self, key, value):
+        # Insert or update the value associated with the key
+        hash_index = self._hash(key)
+        bucket = self.table[hash_index]
+        
+        found = False
+        for index, (k, v) in enumerate(bucket):
+            if k == key:
+                bucket[index] = (key, value)  # Update existing key-value pair
+                found = True
+                break
+        
+        if not found:
+            bucket.append((key, value))  # Add new key-value pair
+```
+put函数用于将(key, value)元组添加到对应的bucket中，如果key已经存在，则更新value。  
+key通过调用_hash函数生成哈希表index，找到对应的bucket。  
+bucket也是一个列表，遍历bucket，如果已经存在key，则更新value。如果bucket中不存在key，则将(key, value)元组追加到bucket列表的尾部。  
+```python
+    def get(self, key):
+        # Retrieve the value associated with the key
+        hash_index = self._hash(key)
+        bucket = self.table[hash_index]
+        
+        for k, v in bucket:
+            if k == key:
+                return v  # Return the value if key is found
+        
+        raise KeyError(f"Key '{key}' not found")
+```
+get函数用于取得key对应的value。  
+key通过调用_hash函数生成哈希表index，找到对应的bucket。  
+bucket也是一个列表，遍历bucket，查找有没有key，如果找到，返回对应的value。  
+```python
+    def remove(self, key):
+        # Remove the key-value pair from the hash table
+        hash_index = self._hash(key)
+        bucket = self.table[hash_index]
+        
+        for index, (k, v) in enumerate(bucket):
+            if k == key:
+                del bucket[index]  # Remove the key-value pair
+                return
+        
+        raise KeyError(f"Key '{key}' not found")
+```
+remove函数用于从哈希表中删除(key, value)。  
+Key通过调用_hash函数生成哈希表index，找到对应的bucket。  
+遍历bucket，查找key，如果找到，删除(key, value)。  
+```python
+    def __str__(self):
+        # String representation of the hash table
+        pairs = []
+        for bucket in self.table:
+            for key, value in bucket:
+                pairs.append(f"{key}: {value}")
+        return "{" + ", ".join(pairs) + "}"
+```
+__str__函数用于显示整个哈希表内容。  
+  
 ### License  
   
 MIT
