@@ -37,6 +37,54 @@ import array
 my_array = array.array('i', [1, 2, 3, 4, 5])  # 创建一个整数数组
 ```
   
+代码分析：  
+  
+array_simulate_by_list.py文件使用list模拟数组。  
+```python
+my_list = [1, 2, 3, 4, 5]
+```
+初始化数组my_list，包括5个元素。  
+```python
+element = my_list[2]
+```
+访问数组index为2的元素。  
+```python
+my_list.insert(2, 'inserted')
+```
+在数组index为2的位置插入一个元素，它是其内容为'inserted'的字符串。原来的index 2及以后的元素依次后移一位。  
+这一行执行后，my_list数组的内容变成[1, 2, 'inserted', 3, 4, 5]，共6个元素，index 2是字符串类型，其他为整型。  
+可以看出，用list实现的数组是动态数组，其大小是可变的，并且其成员可以是不同类型。  
+```python
+my_list.remove('inserted')
+```
+按value删除数组元素，这里指定删除value为'inserted'的数组元素。执行完这一句后，数组的内容变成[1, 2, 3, 4, 5]。  
+```python
+del my_list[0]
+```
+按index删除数组元素，这里指定删除index为0的数组元素。执行完这一句后，数组的内容变成[2, 3, 4, 5]。  
+```python
+for item in my_list:
+    print(item)
+```
+遍历数组。  
+```python
+if 3 in my_list:
+    print("Found 3 at index:", my_list.index(3))
+```
+查看数组中是否有value为3的元素，如果存在，用my_list.index(3)取得value 3对应的索引。  
+```python
+my_list.append(6)
+```
+在数组末尾追加一个元素6。这一句执行完，数组内容变成[2, 3, 4, 5, 6]。  
+```python
+my_list.extend([7, 8, 9])
+```
+在数组末尾追加3个元素7, 8, 9。这一句执行完，数组内容变成[2, 3, 4, 5, 6, 7, 8, 9]。  
+  
+array_by_array_module.py文件利用array模块实现数组，与list类似，它也是动态数组，可以插入，删除，追加元素，但是它只能保存相同类型的数据。  
+  
+array_by_numpy_ndarray.py文件利用numpy.ndarray实现数组，与list类似，它也是动态数组，可以插入，删除，追加元素，但是它只能保存相同类型的数据。  
+  
 ### License  
   
 MIT
