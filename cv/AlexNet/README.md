@@ -102,7 +102,6 @@ Epoch [10/10], Step [400/782], Loss: 0.7482
 Epoch [10/10], Step [500/782], Loss: 1.0029
 Epoch [10/10], Step [600/782], Loss: 0.7931
 Epoch [10/10], Step [700/782], Loss: 1.1611
-
 ```
 ### License  
   
