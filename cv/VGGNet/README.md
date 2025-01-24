@@ -160,6 +160,10 @@ nn.BatchNorm2d(num_features)
 ```
 给前面的v1, v2, v3版本加上BatchNorm层，正确率能达到87%附近。    
   
+注意：  
+原始的VGGNet是没有BatchNorm层的。因为BatchNorm是在VGGNet提出之后才被发明的。  
+在现代实现中，可以为 VGGNet 添加 BatchNorm 层，以加速训练并提高模型性能。  
+添加 BatchNorm 的 VGGNet 通常被称为 VGGNet-BN。  
   
 梯度消失和梯度爆炸的区别  
 梯度消失：梯度值非常小（接近0）；损失值几乎不下降；参数值几乎不更新；可能原因包括网络过深，不适合的激活函数；解决方法包括使用ReLU，殘差连接，BatchNorm。  
