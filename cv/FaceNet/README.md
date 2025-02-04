@@ -1,4 +1,4 @@
-# U-Net
+# FaceNet
 
 参考：  
 https://github.com/bubbliiiing/facenet-pytorch  
